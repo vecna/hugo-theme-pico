@@ -2,15 +2,15 @@
 	@apply no-blend
 
 *:focus-visible
-  @apply outline outline-accent outline-2
+	@apply outline outline-accent outline-2
 
 html
 	@apply relative
 	scroll-behavior: smooth
 
 @media (prefers-reduced-motion: reduce) 
-  html 
-    scroll-behavior: auto
+	html 
+		scroll-behavior: auto
 
 *::selection
 	@apply bg-accent-light
@@ -23,6 +23,17 @@ h2
 
 h3
 	@apply text-lg my-2
+
+h4
+	@apply text-2xl font-serif my-6 tracking-wide
+
+h5
+	@apply text-2xl my-5 tracking-wider
+	color: var(--color-accent)
+
+h6
+	@apply text-2xl font-bold my-6 tracking-tight text-slate-300 bg-accent-dark
+	border-radius: 5px;
 
 hr
 	@apply border-t border-grey-300

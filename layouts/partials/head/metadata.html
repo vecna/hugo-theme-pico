@@ -8,6 +8,10 @@
 <meta name="description" content="{{ . }}" />
 {{ end }}
 
+{{ with $.Site.Params.image }}
+<meta property="og:image" content="{{ . }}" />
+{{ end }}
+
 {{ end }}
 <title>
 	{{ .Site.Title }}

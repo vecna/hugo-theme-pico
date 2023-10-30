@@ -25,6 +25,11 @@
 		{{ end }}
 	</div>
 
+	<div class="countdown-container">
+		<div id="countdown">
+		</div>
+	</div>
+
 	<nav class="">
 		{{ range .Site.Menus.main }}
 		<a href="{{ .URL | relLangURL}}"
@@ -34,3 +39,81 @@
 		{{ end }}
 	</nav>
 </header>
+
+<style>
+	/* Regole CSS per quando la larghezza è sotto 800px */
+	@media (max-width: 800px) {
+		.countdown-text {
+			display: none;
+		}
+
+		#countdown {
+			font-size: 0.7em !important;
+		}
+	}
+
+	.countdown-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#countdown {
+		text-align: center;
+		/* color: var(--color-accent); */
+		color: red;
+		font-size: 1.2em;
+		padding-left: 4px;
+		padding-right: 4px;
+		border-radius: 8px 8px 0px 0px;
+		border-bottom: 0px !important;
+		/* border: 2px solid var(--color-accent-light); */
+		border: 3px solid red;
+		font-family: Spectral, Georgia, Cambria, Times New Roman, Times, serif;
+		text-decoration: double underline red !important;
+
+		a:hover {
+			/*	text-decoration: double underline var(--color-accent); */
+			text-decoration: double underline var(--color-primary);
+			color: var(--color-primary);
+		}
+	}
+</style>
+
+<script>
+	// Data dell'evento (esempio)
+	const nextTrilogue = new Date('2023-12-06T10:00:00');
+
+	function updateCountdown() {
+		const nowtime = new Date();
+		const timeavaildiff = nextTrilogue - nowtime;
+
+		// Calcola i giorni, le ore e i minuti rimanenti
+		const days = Math.floor(timeavaildiff / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((timeavaildiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		const minutes = Math.floor((timeavaildiff % (1000 * 60 * 60)) / (1000 * 60));
+		const seconds = Math.floor((timeavaildiff % (1000 * 60)) / 1000);
+
+		const minutesText = minutes <= 9 ? "0" + minutes : minutes;
+		const secondsText = seconds <= 9 ? "0" + seconds : seconds;
+
+		// Aggiorna il testo nel countdown
+		const countdownElement = document.getElementById('countdown');
+		if (timeavaildiff <= 0) {
+			countdownElement.innerText = 'Trilogue is today!';
+		} else {
+			countdownElement.innerHTML = `<a href="/blog/countdown">
+				⚠ ${days} day${days > 1 ? 's' : ''}, ${hours}:${minutesText}:${secondsText} ⚠
+				<span class="countdown-text">
+					<br>
+					<b>End of AI Act Negotiations</b>
+				</span>
+			</a>`;
+			setTimeout(updateCountdown, 1000); // Aggiorna ogni secondo
+		}
+	}
+
+	// Chiamata iniziale
+	updateCountdown();
+
+</script>

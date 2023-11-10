@@ -3,6 +3,12 @@
 
 <head>
 	{{ partial "head/metadata.html" . }}
+
+	{{ with .Params.banner }}
+	<meta property="og:image" content='{{ . | relURL | printf "%s%s" $.Site.BaseURL }}' />
+	{{ end }}
+
+
 	{{ partial "head/js.html" . }}
 	{{ partial "head/css.html" . }}
 </head>

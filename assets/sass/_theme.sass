@@ -1,75 +1,80 @@
 *
-	@apply no-blend
+  @apply no-blend
 
 *:focus-visible
-	@apply outline outline-accent outline-2
+  @apply outline outline-accent outline-2
 
 html
-	@apply relative
-	scroll-behavior: smooth
+  @apply relative
+  scroll-behavior: smooth
 
 body
-        @apply font-sans
+  @apply font-sans
 
 
 @media (prefers-reduced-motion: reduce) 
-	html 
-		scroll-behavior: auto
+  html 
+    scroll-behavior: auto
 
 *::selection
-	@apply bg-accent-light
+  @apply bg-accent-light
 
 h1
-	@apply text-3xl font-serif my-6 tracking-tight
+  @apply text-3xl font-serif my-6 tracking-tight
 
 h2
-	@apply text-xl font-bold my-3
+  @apply text-xl font-bold my-3
 
 h3
-	@apply text-lg my-2
+  @apply text-lg my-2
 
 h4
-	@apply text-2xl font-serif my-6 tracking-wide
+  @apply text-2xl font-serif my-6 tracking-wide
 
 h5
-	@apply text-2xl my-5 tracking-wider
-	color: var(--color-accent)
+  @apply text-2xl my-5 tracking-wider
+  color: var(--color-accent)
 
 h6
-	@apply text-2xl font-bold my-6 tracking-tight text-slate-300 font-serif
-	color: var(--color-accent)
+  @apply text-2xl font-bold my-6 tracking-tight text-slate-300 font-serif
+  color: var(--color-accent)
 
 hr
-	@apply border-t border-grey-300
+  @apply border-t border-grey-300
 
 a
-	@apply underline
+  @apply underline
 
 a, a:hover
-	color: inherit
+  color: inherit
 
 .font-blogpost
-        @apply mt-4
-        font-family: Spectral, Georgia, Cambria, Times New Roman, Times, serif;
-        font-size: 1.3em
+  @apply mt-4
+  font-family: Spectral, Georgia, Cambria, Times New Roman, Times, serif;
+  font-size: 1.3em
+
+p
+  line-height: 1.6em;
+  padding-top: 6px;
+  padding-bottom: 6px;
 
 ul
-	list-style: initial
-	@apply pl-6 ml-8
+  list-style: initial
+  @apply pl-6 ml-8
 
 code
-	@apply p-1 rounded-md
-	background-color: var(--color-secondary-dark)
-	color: var(--color-primary)
+  @apply p-1 rounded-md
+  background-color: var(--color-secondary-dark)
+  color: var(--color-primary)
 
 blockquote
-	@apply border-l-8 pl-4 
+  @apply border-l-8 pl-4 
 
 input, textarea, button
-	@apply p-2 mb-4 rounded-md
+  @apply p-2 mb-4 rounded-md
 
 input:not([type='checkbox']):not([type='button']):not([type='submit']):not([type='reset']):not([type='color']):not([type='file']):not([type='hidden']):not([type='image']):not([type='radio']), textarea
-	@apply w-full border-2
+  @apply w-full border-2
 
 input[type='submit'], input[type='reset']
-	@apply cursor-pointer px-2
+  @apply cursor-pointer px-2

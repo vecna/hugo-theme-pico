@@ -8,6 +8,10 @@ html
 	@apply relative
 	scroll-behavior: smooth
 
+body
+        @apply font-sans
+
+
 @media (prefers-reduced-motion: reduce) 
 	html 
 		scroll-behavior: auto
@@ -44,8 +48,10 @@ a
 a, a:hover
 	color: inherit
 
-p
-	@apply font-sans mt-4
+.font-blogpost
+        @apply mt-4
+        font-family: Spectral, Georgia, Cambria, Times New Roman, Times, serif;
+        font-size: 1.3em
 
 ul
 	list-style: initial
